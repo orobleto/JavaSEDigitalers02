@@ -30,10 +30,6 @@ public class Usuario {
 		return correo;
 	}
 
-	/**
-	 * este es el seteo del correo del usuario
-	 * @param correo
-	 */
 	public void setCorreo(String correo) {
 		this.correo = correo;
 	}
