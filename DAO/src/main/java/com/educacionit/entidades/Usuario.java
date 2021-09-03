@@ -1,5 +1,10 @@
 package com.educacionit.entidades;
 
+/**
+ * 
+ * @author octav
+ *
+ */
 public class Usuario {
 	private String correo;
 	private String clave;
@@ -25,6 +30,10 @@ public class Usuario {
 		return correo;
 	}
 
+	/**
+	 * este es el seteo del correo del usuario
+	 * @param correo
+	 */
 	public void setCorreo(String correo) {
 		this.correo = correo;
 	}
