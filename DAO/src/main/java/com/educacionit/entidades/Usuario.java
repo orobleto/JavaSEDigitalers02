@@ -1,5 +1,8 @@
 package com.educacionit.entidades;
 
+import com.educacionit.excepciones.ExcepcionPatrones;
+import com.educacionit.interfaces.Patrones;
+
 /**
  * 
  * @author octav
@@ -14,10 +17,10 @@ public class Usuario {
 
 	}
 
-	public Usuario(String correo, String clave, Boolean activo) {
+	public Usuario(String correo, String clave, Boolean activo) throws ExcepcionPatrones {
 		super();
-		this.correo = correo;
-		this.clave = clave;
+		setCorreo(correo);
+		setClave(clave);
 		this.activo = activo;
 	}
 
@@ -30,7 +33,10 @@ public class Usuario {
 		return correo;
 	}
 
-	public void setCorreo(String correo) {
+	public void setCorreo(String correo) throws ExcepcionPatrones {
+		if (!Patrones.esCorreo(correo)) {
+			throw new ExcepcionPatrones(1);
+		}
 		this.correo = correo;
 	}
 
@@ -38,7 +44,10 @@ public class Usuario {
 		return clave;
 	}
 
-	public void setClave(String clave) {
+	public void setClave(String clave) throws ExcepcionPatrones {
+		if (!Patrones.esClave(clave)) {
+			throw new ExcepcionPatrones(2);
+		}
 		this.clave = clave;
 	}
 

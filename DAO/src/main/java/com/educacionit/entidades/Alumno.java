@@ -3,6 +3,8 @@ package com.educacionit.entidades;
 import java.util.Date;
 import java.util.Objects;
 
+import com.educacionit.interfaces.Fechas;
+
 public class Alumno {
 	private Documento documento;
 	private String descripcion;
@@ -23,7 +25,7 @@ public class Alumno {
 
 	@Override
 	public String toString() {
-		return "Alumno [" + documento + ", " + descripcion + ", " + fechaNacimiento + ", " + activo + "]";
+		return "Alumno [" + documento + ", " + descripcion + ", " + Fechas.getFechaAString(fechaNacimiento) + ", " + activo + "]";
 	}
 
 	public Documento getDocumento() {
